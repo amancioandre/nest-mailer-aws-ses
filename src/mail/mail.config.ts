@@ -6,8 +6,8 @@ import { MailerOptions } from '@nestjs-modules/mailer';
 export const config: MailerOptions = {
     transport: {
         SES: new AWS.SES({
-            accessKeyId: '',
-            secretAccessKey: '',
+            accessKeyId: process.env.AWS_SES_ACCESS_KEY_ID,
+            secretAccessKey: process.env.AWS_SES_SECRET_KEY,
         })
     },
     defaults: {
